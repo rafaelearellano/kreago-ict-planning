@@ -1,167 +1,287 @@
 # KREAGO ICT Planning
 
-KREAGO ICT Planning is an early-stage prototype focused on improving how physical ICT infrastructure is planned, reviewed, and quantified before installation.
+KREAGO ICT Planning is an early-stage software prototype focused on improving how physical Information and Communications Technology (ICT) infrastructure is planned, reviewed, and quantified before installation.
 
-The project is being developed around real field problems found in low-voltage and telecommunications infrastructure, including pathway constraints, cable-distance limits, coordination conflicts, device quantities, material takeoff, and constructability.
+The project addresses recurring technical challenges in low-voltage and telecommunications infrastructure, including pathway constraints, cable-distance limitations, coordination conflicts, device quantities, material takeoff, and constructability.
 
-## Current Focus
+The objective is to support earlier identification of potential engineering and installation issues through software-assisted analysis, structured engineering rules, and human technical validation.
 
-The prototype is being developed to support workflows such as:
+## Project Objectives
 
-- Drawing and plan analysis
-- ICT device identification
+KREAGO AI is being developed to support workflows involving:
+
+- Drawing and construction-plan analysis
+- ICT device identification and classification
 - Quantity takeoff
-- Bill of Materials preparation
+- Bill of Materials (BOM) preparation
 - Pathway and routing evaluation
 - Engineering-rule checks
-- Early identification of coordination issues
-- Human review and validation of AI-assisted results
+- Identification of potential coordination conflicts
+- Human review and validation of software-assisted results
 
-## Design Approach
+The intended application includes ICT infrastructure in educational facilities, airports, commercial buildings, telecommunications rooms, and other technically complex environments.
 
-KREAGO is not intended to autonomously design telecommunications infrastructure.
+## Problems Being Addressed
 
-The intended workflow is:
-
-```text
-Plans / Project Information
-          ↓
-AI-assisted interpretation
-          ↓
-Engineering rules evaluation
-          ↓
-Warnings / quantities / alternatives
-          ↓
-Human technical validation
-          ↓
-Reports and project outputs
-
-The goal is to support engineering and construction decisions while keeping technical review and final judgment with the user.
-
-Problems Being Addressed
-
-Physical ICT infrastructure can be affected by issues that are difficult or expensive to correct after installation begins.
+Physical ICT infrastructure projects can encounter planning and coordination issues that become difficult or expensive to correct after installation begins.
 
 Examples include:
 
-Copper horizontal cabling exceeding allowable distances
-Poor MDF/IDF assignment
-Missing or poorly located pull points
-Excessive pathway bends
-Conduit and pathway capacity issues
-Conflicts with electrical, HVAC, fire protection, and other building systems
-Incorrect or incomplete device quantities
-Material discrepancies between drawings and field conditions
-Rework caused by planning decisions that are technically possible on paper but difficult to build
+- Copper horizontal cabling exceeding applicable distance limits
+- Incorrect or inefficient MDF/IDF assignments
+- Missing or poorly located pull points
+- Excessive pathway bends
+- Conduit and pathway capacity constraints
+- Conflicts with electrical, HVAC, fire protection, and other building systems
+- Incorrect or incomplete device quantities
+- Material discrepancies between drawings and installation requirements
+- Rework resulting from design decisions that are difficult to implement in the field
 
-KREAGO is being developed to identify more of these conditions earlier in the planning process.
+KREAGO AI is being developed to identify and evaluate more of these conditions during the planning and technical review stages.
 
-Development Status
+## Design Approach
 
-Prototype / Work in Progress
+KREAGO AI is not intended to autonomously design or approve telecommunications infrastructure.
 
-The project is currently under active development.
+The proposed workflow is:
 
-Current work includes:
+Plans / Project Information
+        |
+        v
+Drawing and Data Interpretation
+        |
+        v
+Device and Infrastructure Identification
+        |
+        v
+Engineering Rules Evaluation
+        |
+        v
+Warnings / Quantities / Alternatives
+        |
+        v
+Human Technical Review and Validation
+        |
+        v
+Reports and Project Outputs
 
-User interface development
-Drawing-analysis workflows
-Device and symbol classification
-Quantity extraction
-Engineering-rule logic
-Reporting and validation workflows
-Evaluation of local AI models for software development and technical analysis
+The software is intended to assist technical professionals by organizing project information, evaluating defined engineering conditions, and presenting results for review.
 
-The internal application source code and engineering-rule implementation are maintained separately from this public repository.
+Final engineering decisions remain the responsibility of qualified professionals.
 
-Technical Direction
+## Development Methodology
 
-The project is being developed around a modular architecture that separates:
+### Specification-Driven Development (SDD)
 
-Project and drawing inputs
-Information extraction
-Engineering rules
-Spatial and pathway analysis
-Engineering evaluation
-Alternative generation
-Human validation
-Reports, quantities, BOMs, and documentation
+KREAGO AI follows a Specification-Driven Development (SDD) approach.
 
-The intended logic is:
+I define the system requirements, functional specifications, engineering rules, expected behavior, and validation criteria before implementing or modifying software components.
 
-AI interprets → rules evaluate → software proposes → engineer validates
+AI-assisted development tools support code generation, implementation, debugging, and testing.
 
-Planned Capabilities
+The resulting software is reviewed against the defined specifications and technical requirements.
+
+This methodology allows me to direct software development based on my professional experience in ICT and low-voltage infrastructure.
+
+My responsibilities include:
+
+- Defining the system architecture and functional requirements
+- Establishing engineering rules and technical constraints
+- Describing expected software behavior
+- Defining device classifications and infrastructure relationships
+- Reviewing interface functionality and workflow requirements
+- Evaluating implementation results against the specifications
+- Identifying errors, limitations, and required improvements
+- Directing subsequent development and testing activities
+
+The methodology separates engineering requirements and technical decisions from the software implementation process.
+
+## Current Development Status
+
+**Status: Functional Prototype / Work in Progress**
+
+KREAGO AI is under active development.
+
+The existing prototype includes implemented or partially implemented components related to:
+
+- PDF and drawing intake
+- Drawing visualization and navigation
+- Text extraction and document processing
+- Device and symbol identification workflows
+- Device classification and labeling
+- Communications-room identification
+- Preliminary cable and pathway evaluation
+- Quantity and material calculations
+- Patch-panel allocation and visualization
+- Engineering-rule evaluation
+- Interactive review interfaces
+- Report and data-export functions
+
+These capabilities are at different stages of development and testing.
+
+Some functions are experimental, depend on project-specific assumptions, or require manual review.
+
+The presence of a feature in the prototype does not establish that it has been independently validated or is ready for production use.
+
+## Technical Architecture
+
+The prototype uses a modular architecture that separates several functional areas:
+
+### 1. Project and Drawing Inputs
+
+Processing of project information, PDF drawings, images, and associated technical data.
+
+### 2. Information Extraction
+
+Identification and organization of drawing information, device references, labels, and other relevant project elements.
+
+### 3. Engineering Rules
+
+Evaluation of defined technical conditions, parameters, and infrastructure constraints.
+
+### 4. Spatial and Pathway Analysis
+
+Preliminary analysis of device locations, communications rooms, routing conditions, and spatial relationships.
+
+### 5. Engineering Evaluation
+
+Generation of findings, warnings, and technical information for further review.
+
+### 6. Human Validation
+
+Review and correction of software-assisted results by the user.
+
+### 7. Project Outputs
+
+Preparation of quantities, material information, schedules, reports, and other project-related outputs.
+
+The architecture is intended to support incremental development and testing of individual components.
+
+## Technology
+
+The current prototype is primarily developed using:
+
+- Python
+- Flask
+- JavaScript
+- HTML / CSS
+- PDF and image-processing libraries
+- Rule-based engineering analysis
+- Git-based version control
+
+AI-assisted development tools are used to support software implementation, debugging, testing, and technical analysis.
+
+The technology stack may evolve as development progresses.
+
+## Development and Testing
+
+Development activities include:
+
+- Functional specification preparation
+- Incremental implementation of software components
+- Interface development and review
+- Engineering-rule implementation
+- Automated testing
+- Manual testing with selected drawing examples
+- Identification and correction of software defects
+- Review of results against expected behavior
+
+The development process maintains a distinction between:
+
+**Implemented functionality:** Features represented in the existing software.
+
+**Partially implemented functionality:** Features that operate under limited conditions or remain incomplete.
+
+**Planned functionality:** Capabilities identified for future development.
+
+**Validated functionality:** Features whose behavior has been tested against defined acceptance criteria.
+
+Implementation alone does not establish engineering accuracy, regulatory compliance, or readiness for professional deployment.
+
+## Planned Capabilities
 
 Future development may include:
 
-PDF and drawing interpretation
-Symbol and device recognition
-Automated quantity takeoff
-Cable and pathway-length evaluation
-MDF/IDF assignment assistance
-Pathway geometry checks
-Conduit and support-rule evaluation
-Coordination alerts
-BOM generation
-Comparison of design alternatives
-Traceable engineering-rule results
-AI-assisted review of project documentation
-Technology
+- More reliable drawing and symbol interpretation
+- Expanded ICT device recognition
+- Automated quantity takeoff
+- Cable and pathway-length evaluation
+- MDF/IDF assignment assistance
+- Pathway geometry checks
+- Conduit and support-system evaluation
+- Engineering coordination alerts
+- Material and BOM generation
+- Comparison of design alternatives
+- Traceable engineering-rule results
+- AI-assisted review of project documentation
+- Improved reporting and validation workflows
 
-The prototype currently uses and evaluates technologies including:
+These capabilities represent development objectives and should not be interpreted as completed or independently validated functions.
 
-Python
-FastAPI
-React
-TypeScript
-HTML / CSS
-Local and cloud-based AI models
-Computer vision and document-processing tools
-Rule-based engineering analysis
-Git-based version control
+## Project Background
 
-The final technology stack may change as the prototype develops.
+KREAGO AI is being developed from practical experience in ICT and low-voltage infrastructure.
 
-Project Background
+My professional background includes telecommunications systems, structured cabling, fiber-optic infrastructure, communications rooms, and low-voltage installations in educational facilities, airports, and other complex buildings.
 
-KREAGO is being developed from practical experience with ICT and low-voltage infrastructure in environments such as airports, educational facilities, communications rooms, secure spaces, and other complex buildings.
+This experience provides the technical basis for identifying recurring planning, coordination, installation, and verification problems.
 
-The project is intended to convert recurring field and coordination problems into repeatable software-assisted checks that can be applied earlier in project planning.
+The project seeks to translate these practical requirements into structured software workflows that can support earlier technical evaluation.
 
-Public Repository Scope
+## Public Repository Scope
 
-This repository is intended to document the development and technical direction of the project.
+This repository documents the technical direction, development methodology, and selected progress of KREAGO AI.
 
-It may include:
+It may contain:
 
-Architecture diagrams
-Selected screenshots
-Development notes
-Public demonstrations
-Technical concepts
-Roadmap information
-Non-confidential examples
+- Project documentation
+- Architecture diagrams
+- Selected interface screenshots
+- Development notes
+- Technical concepts
+- Roadmap information
+- Demonstrations
+- Non-confidential examples
+- Selected testing and validation summaries
 
-It does not currently contain the complete application source code, proprietary engineering-rule implementation, confidential project documents, or customer information.
+The complete application source code and proprietary engineering-rule implementation are maintained separately in a private repository.
 
-Roadmap
+This public repository does not provide access to confidential construction drawings, customer information, restricted project documents, or the complete internal development environment.
 
-Near-term development priorities include:
+Published materials are intended to document development activities and technical concepts without disclosing proprietary or confidential information.
 
-Improve drawing-analysis reliability
-Expand device and symbol classification
-Improve quantity takeoff
-Add traceable engineering-rule checks
-Improve reporting and validation
-Test workflows against representative ICT projects
-Develop a functional demonstration suitable for technical review
-Author
+## Development Roadmap
 
-Rafael E. Arellano
-Electrical Engineer
+Current development priorities include:
+
+1. Improving drawing-analysis reliability
+2. Expanding device and symbol classification
+3. Improving quantity takeoff and material calculations
+4. Developing traceable engineering-rule evaluations
+5. Improving routing and spatial analysis
+6. Expanding automated testing
+7. Improving reporting and technical validation
+8. Testing workflows against representative ICT project scenarios
+9. Preparing demonstrations suitable for technical review
+
+Development priorities may change based on testing results, technical limitations, and available resources.
+
+## Project Documentation and Evidence
+
+KREAGO AI maintains internal development records, including source-code revisions, technical documentation, selected testing results, and interface screenshots.
+
+These records document development activities and support review of the prototype's evolution.
+
+Publicly available documentation may be expanded as additional materials are prepared and reviewed for confidentiality.
+
+The existence of development records does not establish that every planned capability has been implemented, tested, or validated.
+
+## Author
+
+**Rafael E. Arellano**
+
+Electronic Engineer
+
 ICT & Low-Voltage Infrastructure
-
-LinkedIn: Rafael E. Arellano
 
 GitHub: rafaelarellano
